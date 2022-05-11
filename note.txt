@@ -1,0 +1,87 @@
+- Arrow function không có constructor(this).
+var course = {
+    name: 'Javascript',
+    price: 1000
+}
+- Rest(Lấy ra phần còn lại của array hoặc obj): var {name: ten_moi, children: {name = 'gia_tri_mac_dinh'}} = course
+
+=> Kết hợp với Destructuring + Định nghĩa ra tham số
+
+- Truyền đối số vào hàm thì nó là Spread (Lấy ra phần tử của array hoặc obj).
+
+=============================================================
+Life cycle của component trong ReactJS là gì?
+Với component trong ReactJS, life cycle gồm 3 giai đoạn:
+Được tạo ra (Mounting)
+Qua nhiều thay đổi (Updating)
+Và bị huỷ bỏ (Unmounting)
+
+## JSX
+- Bable chuyển đổi cú pháp.
+
+## Props
+
+### React element types: string, function/class
+- for(thẻ label) => đổi thành htmlFor.
+- class => className
+
+### React component
+- Sử dụng props giống như đối số cho function
+    + Eg: <PostItem title="Title" />
+- Tự đặt tên cho props.
+    + Đặt tên theo camelCase
+** Lưu ý:
+    - Prop "key" là prop đặc biệt: dùng khi react component hoặc react element vào array.
+    - Có thể là bất cứ kiểu dữ liệu gì
+    - Sử dụng Destructuring:
+        function PostItem({
+            image,
+            title,
+        });
+
+## DOM events
+- Không nên xử lý logic trong component UI.
+
+- Quy ước đặt tên components: 
+	+ Viết hoa chữ cái đầu.
+	+ Booleans, Null & Undefined không được render
+- Props trong JSX
+	+ 	<YourComponent 
+			propName1="String literals"
+			propName2={expression}
+		/>
+		
+	+ Children là props. <YourComponent> children </<YourComponent >
+	
+## Hooks
+- Dùng trong function component
+** useState: dữ liệu thay đổi => giao diện tự động được cập nhật
+	import {useState} from 'react'
+	+ Đầu vào: giá trị khởi tại initState
+	+ Đầu ra: mảng, state: giá trị khởi tạo cho lần đầu, setState: set lại giá trị state
+** useEffect 
+Khi muốn thực hiện side effects(có tác động làm dữ liệu thay đổi)
+1. Effects không cần clean up: gọi API, tương tác DOM
+2. Effects cần clean up: subscriptions, setTimeout, setInterval.
+
+ 1. useEffect(callback)
+ - Gọi callback mỗi khi component re-render
+ - Gọi callback sau khi component thêm element vào DOM
+
+ 2. useEffect(callback, [])
+ - Chỉ gọi callback 1 lần khi component mounted
+
+ 3. useEffect(callback, [deps])
+ - Callback được gọi lại khi deps thay đổi
+ ---------------------------------------------
+ 1. Callback luôn được gọi sau khi component mounted
+ 2. Cleanup function luôn được gọi trước khi component unmounted
+ 3. Cleanup function luôn được gọi trước khi callback được gọi ( trừ lần mounted )
+
+** useLayoutEffect
+Tương tự như useEffect, nhưng sẽ callback trước khi render lại UI.
+
+** useRef
+Lưu giá trị qua một tham chiếu bên ngoài function component.
+
+
