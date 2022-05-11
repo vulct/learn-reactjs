@@ -1,0 +1,23 @@
+.video__button{
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 9999px;
+    background-color: #16182324;
+    color: #161823;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    cursor:pointer;
+}
+
+.video__button:hover{
+    background-color: #1618231a;
+}
+
+.text__info{
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+}
